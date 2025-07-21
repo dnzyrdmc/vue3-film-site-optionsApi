@@ -1,4 +1,4 @@
-# Benim Projem
+# Film Site
 
 OMDb API tarafından sağlanan ve çekilen verileri otomatik olarak getiren ve teker teker filmlere ait bilgileri ekrana düzgün şekilde yansıtan bir VUe3 projesidir.
 
@@ -10,4 +10,4 @@ OMDb API tarafından sağlanan ve çekilen verileri otomatik olarak getiren ve t
 
 Projeyi çalıştırmak için:
 
-buludnuğu dosyanın terminaline; "npm run serve"
+bulunduğu dosyanın terminaline; "npm run serve" yazılıp çalıştırılamsı yeterlidir.
