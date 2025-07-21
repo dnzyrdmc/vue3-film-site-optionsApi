@@ -1,24 +1,13 @@
-# film-site
+# Benim Projem
 
-## Project setup
-```
-npm install
-```
+OMDb API tarafından sağlanan ve çekilen verileri otomatik olarak getiren ve teker teker filmlere ait bilgileri ekrana düzgün şekilde yansıtan bir VUe3 projesidir.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 🛠️ Kullanılan Teknolojiler
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- Vue3
 
-### Lints and fixes files
-```
-npm run lint
-```
+## 🔧 Kurulum
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Projeyi çalıştırmak için:
+
+buludnuğu dosyanın terminaline; "npm run serve"
