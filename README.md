@@ -8,6 +8,9 @@ Filtreleme kısmında Vue3'e ait olan "Vue datepicker" kütüphanesi takvim içi
 ## 🛠️ Kullanılan Teknolojiler
 
 - Vue3
+- Javascript
+- Html
+- Css
 
 ## 🔧 Kurulum
 
