@@ -59,12 +59,11 @@ export default {
     DateChange(newYearValue) {
       this.date = newYearValue; 
 
-      if (newYearValue) { // newYearValue'nin null veya undefined olup olmadığını kontrol et
-        // selectedYear artık doğrudan newYearValue olacak, getFullYear'a gerek yok
+      if (newYearValue) {
         const selectedYear = newYearValue;
         this.films = this.allFilms.filter(film => film.Year === String(selectedYear));
       } else {
-        this.films = this.allFilms; // Yıl seçimi kaldırıldığında tüm filmleri göster
+        this.films = this.allFilms; 
       }
     },
 
