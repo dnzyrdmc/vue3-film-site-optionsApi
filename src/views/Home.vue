@@ -9,13 +9,18 @@
     </form>
     <hr>
     <br>
-    <p>Tarih Seç</p>
-    <VueDatePicker
-      class="date-pick"
-      :model-value="date"  
-      @update:model-value="DateChange" :format="'yyyy'"
-      :type="'year'"
-    />
+
+    <div class="centeredItems">
+      <p>Tarih Seç</p>
+      <VueDatePicker
+        v-model="date"
+        @update:model-value="DateChange"
+        :format="'yyyy'"
+        yearPicker 
+        autoApply 
+      />
+    </div>
+
     <hr>
     <h1>Film Listesi</h1>
     <div class="film-container">
@@ -36,12 +41,12 @@ import VueDatePicker from '@vuepic/vue-datepicker';
 import '@vuepic/vue-datepicker/dist/main.css'
 
 export default {
-  name: 'HomeView',         
+  name: 'HomeView',
   components: { FilmCard, VueDatePicker },
   data() {
     return {
       films: [],
-      date: null,
+      date: null, 
       allFilms: [],
       movieName: null,
     }
@@ -51,25 +56,23 @@ export default {
     this.films = this.allFilms;
   },
   methods: {
+    DateChange(newYearValue) {
+      this.date = newYearValue; 
 
-    DateChange(newDate) {
-        
-    this.date = newDate;
-
-        if (newDate) {
-          const selectedYear = newDate.getFullYear();
-        
-          this.films = this.allFilms.filter(film => film.Year === String(selectedYear));
-        } else {
-           this.films = this.allFilms;
-        }
+      if (newYearValue) { // newYearValue'nin null veya undefined olup olmadığını kontrol et
+        // selectedYear artık doğrudan newYearValue olacak, getFullYear'a gerek yok
+        const selectedYear = newYearValue;
+        this.films = this.allFilms.filter(film => film.Year === String(selectedYear));
+      } else {
+        this.films = this.allFilms; // Yıl seçimi kaldırıldığında tüm filmleri göster
+      }
     },
 
     filterName(){
       if(this.movieName){
         const newName = this.movieName;
         this.films = this.allFilms.filter(film =>
-        film.Title.includes(newName)
+        film.Title === String(newName)
         )
       }else{
           this.films = this.allFilms;
@@ -90,11 +93,6 @@ export default {
   gap: 16px;
 }
 
-.date-pick{
-  text-align: center;
-  padding-left: 40%;
-  padding-right: 40%;
-}
 h1{
   text-align: center;
 }
@@ -104,4 +102,10 @@ h1{
 p{
   text-align: center;
 }
+.centeredItems{
+  text-align: center;
+  padding-left: 40%; 
+  padding-right: 40%;
+}
 </style>
+
